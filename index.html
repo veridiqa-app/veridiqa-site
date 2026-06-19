@@ -335,8 +335,8 @@ body.anim .scr.in svg{opacity:1;transform:none}
   <div class="navlinks" onclick="document.body.classList.remove('navopen')">
     <a href="#about">About</a>
     <a href="#solutions">Solutions</a>
-    <a href="#preview">Platform</a>
     <a href="#prism">Nexus Prism</a>
+    <a href="#preview">Platform</a>
     <a href="#trust">Trust</a>
     <button class="themebtn" id="themebtn" aria-label="Toggle light or dark mode">&#9790; Dark</button>
     <a href="#contact" class="btn btn-gold">Request a demo</a>
@@ -812,7 +812,7 @@ body.anim .scr.in svg{opacity:1;transform:none}
   if(tbtn)tbtn.onclick=function(e){e.stopPropagation();var dark=document.documentElement.getAttribute('data-theme')==='dark';if(dark){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('vq-theme','light');}catch(x){}}else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('vq-theme','dark');}catch(x){}}lbl();};
   var tt=document.getElementById('toTop');
   if(tt){tt.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};window.addEventListener('scroll',function(){if((window.scrollY||document.documentElement.scrollTop)>600)tt.classList.add('show');else tt.classList.remove('show');},{passive:true});}
-  if('IntersectionObserver' in window){var spy=document.querySelectorAll('.navlinks a[href^="#"]');var secs=['about','solutions','preview','prism','trust'];var ob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.id;spy.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id);});}});},{rootMargin:'-45% 0px -50% 0px'});secs.forEach(function(id){var el=document.getElementById(id);if(el)ob.observe(el);});}
+  if('IntersectionObserver' in window){var spy=document.querySelectorAll('.navlinks a[href^="#"]');var secs=['about','solutions','prism','preview','trust'];var ob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.id;spy.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id);});}});},{rootMargin:'-45% 0px -50% 0px'});secs.forEach(function(id){var el=document.getElementById(id);if(el)ob.observe(el);});}
   function countUp(el){var n=parseFloat(el.getAttribute('data-count'))||0;var suf=el.getAttribute('data-suf')||'';var s=0,step=n/45;var id=setInterval(function(){s+=step;if(s>=n){s=n;clearInterval(id);}el.textContent=Math.round(s)+suf;},22);}
   function typeAI(el){var t=el.getAttribute('data-text')||'';var i=0;var id=setInterval(function(){el.textContent=t.slice(0,i++);if(i>t.length){clearInterval(id);var c=el.nextElementSibling;if(c&&c.classList.contains('cursor'))c.style.display='none';}},16);}
   var c=document.getElementById('neural');
