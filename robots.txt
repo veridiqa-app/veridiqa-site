@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veridiqa-app.github.io/veridiqa-site/sitemap.xml

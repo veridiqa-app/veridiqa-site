@@ -26,6 +26,16 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Veridiqa","url":"https://veridiqa-app.github.io/veridiqa-site/","description":"Veridiqa turns the market data pharmaceutical companies already own into verified, decision-ready intelligence — scored and ready to act on. Flagship platform: Nexus Prism.","logo":"https://veridiqa-app.github.io/veridiqa-site/og_veridiqa.png","email":"contact@veridiqa.com","address":{"@type":"PostalAddress","addressLocality":"Riyadh","addressCountry":"SA"},"areaServed":"Worldwide","makesOffer":{"@type":"Offer","itemOffered":{"@type":"Product","name":"Nexus Prism","description":"Pharmaceutical portfolio intelligence, ranking and scoring platform."}}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What makes Veridiqa different?","acceptedAnswer":{"@type":"Answer","text":"Veridiqa uses the market data you already license (no new subscription) and hands you a scored decision, not just another dashboard. A proprietary 50-factor PRISM engine ranks your whole portfolio on one defensible ladder, every output is evidence-flagged and traceable, your platform goes live in days not quarters, and everything is confidential by default."}},
+{"@type":"Question","name":"What is Nexus Prism?","acceptedAnswer":{"@type":"Answer","text":"Nexus Prism is Veridiqa's flagship platform. It connects your market data and refracts it into ranked, scored insight across six solutions: Market Intelligence, Portfolio Management and Scoring, Head-to-Head Analysis, Market Dynamics, Opportunity and Competitive Radar, and Executive Advisory."}},
+{"@type":"Question","name":"How fast can we go live?","acceptedAnswer":{"@type":"Answer","text":"Days, not quarters. Because Veridiqa builds on the data you already own, there is no new procurement and no long IT project."}},
+{"@type":"Question","name":"Do we need a new data subscription?","acceptedAnswer":{"@type":"Answer","text":"No. Veridiqa works with the market data you already license. You send your export and Veridiqa adds the intelligence layer on top, and never resells or shares it."}},
+{"@type":"Question","name":"How is our data protected?","acceptedAnswer":{"@type":"Answer","text":"You keep full ownership, an NDA is signed before any data is shared, access is least-privilege, data is used only for your engagement and returned or deleted on request, and Veridiqa completes your security questionnaire or DPA and works to your data-residency requirements."}},
+{"@type":"Question","name":"How do we get started?","acceptedAnswer":{"@type":"Answer","text":"Start with a single Market Audit on one data export to see exactly what Veridiqa surfaces on your own numbers before any platform commitment. Book a 30-minute walkthrough to begin."}}
+]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -286,10 +296,38 @@ body.anim .scr.in svg{opacity:1;transform:none}
 .cbfoot button{background:var(--gold);border:none;border-radius:50%;width:38px;height:38px;color:#241a06;font-weight:700;cursor:pointer;font-size:16px;flex:none}
 .cbnote{font-size:10px;color:#7f90b0;text-align:center;padding:0 12px 9px}
 .cbbtn{display:inline-block;margin-top:9px;background:var(--gold);color:#241a06;font-weight:600;font-size:12.5px;padding:7px 14px;border-radius:8px}
+/* === theme / faq / nav-active / back-to-top === */
+:root[data-theme="dark"]{--bg:#0d1c38;--ink:#e7ecf5;--mut:#a3b2cc}
+[data-theme="dark"] body{background:#0a1428}
+[data-theme="dark"] .card,[data-theme="dark"] .dcard,[data-theme="dark"] .segc,[data-theme="dark"] .tier,[data-theme="dark"] .wwc,[data-theme="dark"] .step,[data-theme="dark"] .results,[data-theme="dark"] .cmp .old,[data-theme="dark"] .faq{background:#0f1f3d;border-color:#243a63}
+[data-theme="dark"] .results div+div{border-color:#243a63}
+[data-theme="dark"] .results b,[data-theme="dark"] .dcard h4,[data-theme="dark"] .tier h3,[data-theme="dark"] .segc b,[data-theme="dark"] .step h3{color:#eaf0fa}
+[data-theme="dark"] [style*="--navy"]{color:#dbe6fb!important}
+[data-theme="dark"] .cmp .old h3{color:#9fb0cd}[data-theme="dark"] .cmp .old li{color:#aeb9cc;border-color:#243a63}
+[data-theme="dark"] .lb-c{background:#26324a;color:#cfe0ff}
+[data-theme="dark"] footer{background:#070f1f}
+.themebtn{background:none;border:1px solid rgba(255,255,255,.32);color:#fff;border-radius:20px;height:34px;padding:0 13px;cursor:pointer;font-size:12.5px;display:inline-flex;align-items:center;gap:6px;transition:.15s;font-family:inherit}
+.themebtn:hover{border-color:var(--gold);color:var(--gold)}
+.navlinks a.active{color:#fff}
+.navlinks a.active::after{content:"";display:block;height:2px;background:var(--gold);border-radius:2px;margin-top:3px}
+@media(max-width:860px){.navlinks a.active::after{display:none}}
+#toTop{position:fixed;left:22px;bottom:22px;z-index:65;width:46px;height:46px;border-radius:50%;background:rgba(15,30,61,.9);border:1px solid #34436b;color:#fff;cursor:pointer;font-size:18px;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+#toTop.show{display:flex}#toTop:hover{border-color:var(--gold);color:var(--gold)}
+.faqwrap{max-width:820px;margin:38px auto 0}
+.faq{background:#fff;border:1px solid #e7ebf2;border-radius:14px;margin-bottom:12px;overflow:hidden;transition:box-shadow .18s}
+.faq:hover{box-shadow:0 10px 28px rgba(20,35,63,.1)}
+.faq summary{cursor:pointer;padding:18px 22px;font-weight:600;color:var(--navy);font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+[data-theme="dark"] .faq summary{color:#eaf0fa}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:22px;font-weight:700;transition:transform .2s;flex:none}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq .fa{padding:0 22px 20px;color:var(--mut);font-size:14.5px;line-height:1.7}
 </style>
 </head>
 <body>
+<script>try{var _t=localStorage.getItem('vq-theme');if(_t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 <div id="prog"></div>
+<button id="toTop" aria-label="Back to top">&uarr;</button>
 
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="v_logo.png" alt="Veridiqa"> VERIDIQA</a>
@@ -300,6 +338,7 @@ body.anim .scr.in svg{opacity:1;transform:none}
     <a href="#preview">Platform</a>
     <a href="#prism">Nexus Prism</a>
     <a href="#trust">Trust</a>
+    <button class="themebtn" id="themebtn" aria-label="Toggle light or dark mode">&#9790; Dark</button>
     <a href="#contact" class="btn btn-gold">Request a demo</a>
   </div>
 </div></nav>
@@ -630,6 +669,19 @@ body.anim .scr.in svg{opacity:1;transform:none}
   <p style="color:#9aa6bd;font-size:13px;margin-top:22px;max-width:760px"><strong style="color:var(--ink)">Privacy:</strong> Veridiqa collects only the contact details you choose to send us and the market data you share for an engagement. We do not sell or share your information. To ask a question, request deletion, or sign an NDA before sharing data, email <a class="mail" style="color:var(--gold)" href="mailto:contact@veridiqa.com">contact@veridiqa.com</a>. See our full <a href="#legal" style="color:var(--gold)">Privacy &amp; Terms</a>.</p>
 </div></section>
 
+<section class="sec" id="faq" style="background:var(--bg)"><div class="wrap">
+  <span class="eyebrow">FAQ</span>
+  <h2>Questions, answered.</h2>
+  <div class="faqwrap">
+    <details class="faq"><summary>What makes Veridiqa different?</summary><div class="fa">We use the market data you already license (no new subscription), and we hand you a scored decision &mdash; not just another dashboard. A proprietary 50-factor PRISM engine ranks your whole portfolio on one defensible ladder, every output is evidence-flagged and traceable, your platform goes live in days not quarters, and everything is confidential by default.</div></details>
+    <details class="faq"><summary>What is Nexus Prism?</summary><div class="fa">Nexus Prism is our flagship platform &mdash; your branded decision tool. It connects your market data and refracts it into ranked, scored insight across six solutions: Market Intelligence, Portfolio Management &amp; Scoring, Head-to-Head Analysis, Market Dynamics, Opportunity &amp; Competitive Radar, and Executive Advisory.</div></details>
+    <details class="faq"><summary>How fast can we go live?</summary><div class="fa">Days, not quarters. Because we build on the data you already own, there&rsquo;s no new procurement and no long IT project &mdash; your branded platform is up quickly.</div></details>
+    <details class="faq"><summary>Do we need a new data subscription?</summary><div class="fa">No. Veridiqa works with the market data you already license. You send your export; we add the intelligence layer on top &mdash; and never resell or share it.</div></details>
+    <details class="faq"><summary>How is our data protected?</summary><div class="fa">You keep full ownership, an NDA is signed before any data is shared, access is least-privilege, data is used only for your engagement and returned or deleted on request, and we complete your security questionnaire / DPA and work to your data-residency requirements.</div></details>
+    <details class="faq"><summary>How do we get started?</summary><div class="fa">Start with a single Market Audit on one data export &mdash; see exactly what Veridiqa surfaces on your own numbers before any platform commitment. Book a 30-minute walkthrough to begin.</div></details>
+  </div>
+</div></section>
+
 <section class="sec" id="engage"><div class="wrap">
   <span class="eyebrow">Ways to work with us</span>
   <h2>Start small, or go all in.</h2>
@@ -726,7 +778,7 @@ body.anim .scr.in svg{opacity:1;transform:none}
 <footer><div class="wrap"><div class="row">
   <a class="brand" href="#top"><img src="v_logo.png" alt="Veridiqa" style="height:30px"> VERIDIQA</a>
   <span>Verified intelligence for pharma · Nexus Prism</span>
-  <span><a href="#trust" style="color:#90a0bd">Trust</a> &nbsp;·&nbsp; <a href="#legal" style="color:#90a0bd">Privacy &amp; terms</a> &nbsp;·&nbsp; © 2026 Veridiqa</span>
+  <span><a href="#faq" style="color:#90a0bd">FAQ</a> &nbsp;·&nbsp; <a href="#trust" style="color:#90a0bd">Trust</a> &nbsp;·&nbsp; <a href="#legal" style="color:#90a0bd">Privacy &amp; terms</a> &nbsp;·&nbsp; © 2026 Veridiqa</span>
 </div></div></footer>
 
 <script>
@@ -748,6 +800,13 @@ body.anim .scr.in svg{opacity:1;transform:none}
   }
   var pg=document.getElementById('prog');
   if(pg){window.addEventListener('scroll',function(){var h=document.documentElement;var sc=h.scrollTop||document.body.scrollTop;var mx=h.scrollHeight-h.clientHeight;pg.style.width=(mx>0?(sc/mx*100):0)+'%';},{passive:true});}
+  var tbtn=document.getElementById('themebtn');
+  function lbl(){if(tbtn)tbtn.innerHTML=(document.documentElement.getAttribute('data-theme')==='dark')?'☀ Light':'☾ Dark';}
+  lbl();
+  if(tbtn)tbtn.onclick=function(e){e.stopPropagation();var dark=document.documentElement.getAttribute('data-theme')==='dark';if(dark){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('vq-theme','light');}catch(x){}}else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('vq-theme','dark');}catch(x){}}lbl();};
+  var tt=document.getElementById('toTop');
+  if(tt){tt.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};window.addEventListener('scroll',function(){if((window.scrollY||document.documentElement.scrollTop)>600)tt.classList.add('show');else tt.classList.remove('show');},{passive:true});}
+  if('IntersectionObserver' in window){var spy=document.querySelectorAll('.navlinks a[href^="#"]');var secs=['about','solutions','preview','prism','trust'];var ob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.id;spy.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id);});}});},{rootMargin:'-45% 0px -50% 0px'});secs.forEach(function(id){var el=document.getElementById(id);if(el)ob.observe(el);});}
   function countUp(el){var n=parseFloat(el.getAttribute('data-count'))||0;var suf=el.getAttribute('data-suf')||'';var s=0,step=n/45;var id=setInterval(function(){s+=step;if(s>=n){s=n;clearInterval(id);}el.textContent=Math.round(s)+suf;},22);}
   function typeAI(el){var t=el.getAttribute('data-text')||'';var i=0;var id=setInterval(function(){el.textContent=t.slice(0,i++);if(i>t.length){clearInterval(id);var c=el.nextElementSibling;if(c&&c.classList.contains('cursor'))c.style.display='none';}},16);}
   var c=document.getElementById('neural');
